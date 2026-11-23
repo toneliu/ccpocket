@@ -1,8 +1,6 @@
 name: Android APK
 on:
-  workflow_dispatch: {}
-  repository_dispatch:
-    types: [build-apk]
+  workflow_dispatch: null
 permissions:
   contents: read
 jobs:
