@@ -9,8 +9,5 @@ jobs:
     steps:
       - run: echo ok
 
-      - name: Install Android NDK
-        run: |
-          SDKMANAGER="${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager"
-          yes | "$SDKMANAGER" --licenses > /dev/null
-          "$SDKMANAGER" "ndk;29.0.13846066"
+      - name: Use precompiled Rust artifacts
+        run: printf '%s\n' 'use_precompiled_binaries: true' > apps/mobile/cargokit_options.yaml
